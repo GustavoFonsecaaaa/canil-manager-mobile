@@ -53,12 +53,11 @@ export default function LoginScreen({ navigation }) {
     if (!emailLimpo || !senhaLimpa) {
       exibirToast('Preencha o e-mail e a senha para entrar.', 'erro');
       return;
-    }
-
-    if (emailLimpo === 'admin@canil.com' && senhaLimpa === '123456') {
-      exibirToast('Login realizado com sucesso! Redirecionando...', 'sucesso');
     } else {
-      exibirToast('Login validado! Pronto para conectar à API.', 'sucesso');
+      exibirToast('Login realizado com sucesso! Redirecionando...', 'sucesso');
+      setTimeout(function () {
+        navigation.replace('Dashboard');
+      }, 1000);
     }
   }
 

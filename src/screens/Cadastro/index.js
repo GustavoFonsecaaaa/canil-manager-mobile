@@ -93,6 +93,9 @@ export default function CadastroScreen({ navigation }) {
     }
 
     exibirToast('Conta criada com sucesso! Redirecionando para o login...', 'sucesso');
+    setTimeout(function () {
+      navigation.replace('Login');
+    }, 1000);
   }
 
   function irParaLogin() {
